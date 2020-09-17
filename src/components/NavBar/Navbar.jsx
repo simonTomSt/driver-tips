@@ -1,8 +1,7 @@
-import React from "react";
 import styled from "styled-components";
+import React from "react";
 import Nav from "../../pages/LandingPage/Nav/Nav";
-import Logo from "../Logo/Logo";
-
+import Logo from "../../generic/Logo/Logo";
 const StyledNavBar = styled.nav`
   width: 100vw;
   height: 100px;
@@ -11,6 +10,7 @@ const StyledNavBar = styled.nav`
   align-items: center;
   position: fixed;
   z-index: 100;
+  color:green;
 `;
 
 const NavBar = () => {
