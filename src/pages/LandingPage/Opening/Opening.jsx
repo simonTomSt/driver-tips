@@ -15,7 +15,7 @@ const StyledOpening = styled.section`
   ::after {
     content: "";
     position: absolute;
-    background-color: rgba(0%, 0%, 0%, 0.55);
+    background-color: rgba(0%, 0%, 0%, 0.7);
     left: 0;
     top: 0;
     right: 0;
