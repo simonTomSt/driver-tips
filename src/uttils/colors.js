@@ -4,6 +4,7 @@ export const colors = {
   neutralLight: "#d8e9ef",
   common: "#454552",
   white: "#fff",
+  darkenWhite: "#b3b3b3",
   black: "#000",
   danger: "#FF0000",
   success: "#90EE90",

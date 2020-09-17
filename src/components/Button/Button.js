@@ -1,5 +1,4 @@
 import { darken } from "polished";
-import React from "react";
 import styled from "styled-components";
 
 const handlePropColor = (colors, color, defaultColor) => {
@@ -12,20 +11,24 @@ const handlePropColor = (colors, color, defaultColor) => {
   }
 };
 
-const StyledButton = styled.button`
+const Button = styled.button`
   position: relative;
-  overflow: hidden;
-  background-color: ${({ theme, bgColor }) =>
-    handlePropColor(theme.colors, bgColor, "common")};
-  color: ${({ theme, txtColor }) =>
-    handlePropColor(theme.colors, txtColor, "white")};
+  overflow: hidden !important;
+  display: block;
+  width: fit-content;
+  font-size: ${({ theme }) => theme.fonts.normal} !important;
+  font-weight: ${({ theme }) => theme.fonts.regular} !important;
+  background-color: ${({ theme, bgcolor }) =>
+    handlePropColor(theme.colors, bgcolor, "common")};
+  color: ${({ theme, txtcolor }) =>
+    handlePropColor(theme.colors, txtcolor, "white")} !important;
   border-radius: ${({ theme, radius }) =>
     radius ? radius + "px" : theme.variables.primaryRadius};
   padding: 15px 10px;
 
   :hover {
-    background-color: ${({ theme, bgColor }) =>
-      darken(0.2, handlePropColor(theme.colors, bgColor, "common"))};
+    background-color: ${({ theme, bgcolor }) =>
+      darken(0.2, handlePropColor(theme.colors, bgcolor, "common"))};
   }
   :after {
     content: "";
@@ -39,6 +42,7 @@ const StyledButton = styled.button`
     background: rgba(100%, 100%, 100%, 0.2);
     border-radius: 100%;
     transition: width 0.2s ease, height 0.2s ease;
+    transition-delay: 0.2s;
   }
 
   :active {
@@ -48,13 +52,5 @@ const StyledButton = styled.button`
     }
   }
 `;
-
-const Button = ({ children, bgColor, txtColor, radius, content }) => {
-  return (
-    <StyledButton bgColor={bgColor} txtColor={txtColor} radius={radius}>
-      {content ? content : children}
-    </StyledButton>
-  );
-};
 
 export default Button;

@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   a{
     text-decoration: none;
     color: ${({ theme }) => theme.colors.common};
-    ${"" /* transition: ${({ theme }) => theme.variables.cursorTransition}; */}
+    transition: ${({ theme }) => theme.variables.cursorTransition}; 
   }
   button{
     cursor: pointer;

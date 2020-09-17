@@ -22,7 +22,10 @@ const StyledNav = styled.nav`
     font-size: ${({ theme }) => theme.fonts.large};
     font-weight: ${({ theme }) => theme.fonts.semiBold};
     transition: ${({ theme }) => theme.variables.cursorTransition};
-    :hover,
+    color: ${({ theme }) => theme.colors.darkenWhite};
+    :hover {
+      color: ${({ theme }) => theme.colors.white};
+    }
     &.active {
       color: ${({ theme }) => theme.colors.distinctive};
     }
@@ -41,7 +44,9 @@ const Nav = () => {
       <Scroll to='kontakt' {...scrollSettings}>
         Kontakt
       </Scroll>
-      <Button bgColor='distinctive' content='Zaloguj się' />
+      <Button as={Link} to='/pulpit' bgcolor='neutral'>
+        Zaloguj się
+      </Button>
     </StyledNav>
   );
 };

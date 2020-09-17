@@ -1,10 +1,10 @@
-import React from 'react';
-import NavBar from '../../components/NavBar/Navbar';
+import React from "react";
+import Opening from "./Opening/Opening";
 
 const LandingPage = () => {
   return (
     <>
-      <NavBar />
+      <Opening />
     </>
   );
 };
