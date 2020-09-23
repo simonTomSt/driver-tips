@@ -4,15 +4,16 @@ import styled, { css } from "styled-components";
 import Button from "../../../components/Button/Button";
 import NavBar from "../../../generic/NavBar/Navbar";
 import Text from "../../../components/Text/Text";
-import bgPhoto from "./Opening.jpg";
+
 import media from "styled-media-query";
+import drivingVideo from "./driving.mp4";
 
 const StyledOpening = styled.section`
-  background-image: url(${bgPhoto});
-  background-size: cover;
+  background-color: darkgrey;
   width: 100%;
   height: 100vh;
   position: relative;
+  overflow: hidden;
   ::after {
     content: "";
     position: absolute;
@@ -48,7 +49,13 @@ const StyledOpening = styled.section`
       margin: 0 auto;
     }
   }
-
+  #background-video {
+    height: 100%;
+    width: 100%;
+    float: left;
+    top: 0;
+    padding: none;
+  }
   ${media.greaterThan("1024px")(css`
     .message {
       right: 10%;
@@ -71,6 +78,9 @@ const Opening = () => {
   return (
     <StyledOpening>
       <NavBar />
+      <video autoPlay loop muted>
+        <source src={drivingVideo} type='video/mp4' />
+      </video>
       <div className='message'>
         <h1 className='message__header'>
           Chcesz stać się lepszym kierowcą? Dołącz do <span>Driver-Tips</span>{" "}
