@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Button from "../../../components/Button/Button";
-import NavBar from "../../../components/NavBar/Navbar";
+import NavBar from "../../../generic/NavBar/Navbar";
 import Text from "../../../components/Text/Text";
 import bgPhoto from "./Opening.jpg";
+import media from "styled-media-query";
 
 const StyledOpening = styled.section`
   background-image: url(${bgPhoto});
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   ::after {
@@ -24,28 +25,46 @@ const StyledOpening = styled.section`
   .message {
     position: absolute;
     z-index: 1;
-    right: 10%;
+    right: 0;
     top: 60%;
     transform: translateY(-50%);
-    text-align: right;
+    text-align: center;
+    padding: 0 15px;
     width: 100%;
     max-width: 1024px;
     color: ${({ theme }) => theme.colors.white};
     &__header {
-      line-height: 4.2rem;
-      font-size: ${({ theme }) => theme.fonts.huge};
+      line-height: 3.2rem;
+      font-size: ${({ theme }) => theme.fonts.larger};
       span {
         color: ${({ theme }) => theme.colors.distinctive};
         font-style: italic;
       }
     }
     &__slogan {
-      margin: 15px 0;
+      margin: 25px 0 50px 0;
     }
     a {
-      margin-left: auto;
+      margin: 0 auto;
     }
   }
+
+  ${media.greaterThan("1024px")(css`
+    .message {
+      right: 10%;
+      text-align: right;
+      &__header {
+        line-height: 4.2rem;
+        font-size: 3rem;
+      }
+      &__slogan {
+        margin: 45px 0;
+      }
+      a {
+        margin-right: 0px;
+      }
+    }
+  `)}
 `;
 
 const Opening = () => {

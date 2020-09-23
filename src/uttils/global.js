@@ -24,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
     outline:0;
     transition:  ${({ theme }) => theme.variables.cursorTransition};
   }
+  .row{
+    display:flex;
+    align-items: center;
+  }
 `;
 
 export default GlobalStyle;

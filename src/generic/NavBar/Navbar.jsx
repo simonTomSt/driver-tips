@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import Nav from "../../pages/LandingPage/Nav/Nav";
-import Logo from "../../generic/Logo/Logo";
+import Logo from "../Logo/Logo";
 const StyledNavBar = styled.nav`
   width: 100vw;
   height: 100px;

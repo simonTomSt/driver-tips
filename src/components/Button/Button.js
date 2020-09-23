@@ -1,34 +1,26 @@
 import { darken } from "polished";
 import styled from "styled-components";
 
-const handlePropColor = (colors, color, defaultColor) => {
-  if (colors.hasOwnProperty(color)) {
-    return colors[color];
-  } else if (color) {
-    return color;
-  } else {
-    return colors[defaultColor];
-  }
-};
-
 const Button = styled.button`
   position: relative;
   overflow: hidden !important;
   display: block;
   width: fit-content;
-  font-size: ${({ theme }) => theme.fonts.normal} !important;
-  font-weight: ${({ theme }) => theme.fonts.regular} !important;
+  font-size: ${({ theme, size }) =>
+    theme.handleProps(theme.fonts, size, "normal")} !important;
+  font-weight: ${({ theme, weight }) =>
+    theme.handleProps(theme.fonts, weight, "regular")} !important;
   background-color: ${({ theme, bgcolor }) =>
-    handlePropColor(theme.colors, bgcolor, "common")};
+    theme.handleProps(theme.colors, bgcolor, "common")};
   color: ${({ theme, txtcolor }) =>
-    handlePropColor(theme.colors, txtcolor, "white")} !important;
+    theme.handleProps(theme.colors, txtcolor, "white")} !important;
   border-radius: ${({ theme, radius }) =>
-    radius ? radius + "px" : theme.variables.primaryRadius};
+    theme.handleProps(theme.variables, radius, "primaryRadius")};
   padding: 15px 10px;
 
   :hover {
     background-color: ${({ theme, bgcolor }) =>
-      darken(0.2, handlePropColor(theme.colors, bgcolor, "common"))};
+      darken(0.2, theme.handleProps(theme.colors, bgcolor, "common"))};
   }
   :after {
     content: "";

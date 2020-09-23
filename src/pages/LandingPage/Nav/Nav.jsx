@@ -4,6 +4,7 @@ import { Link as Scroll } from "react-scroll";
 import styled, { css } from "styled-components";
 import Button from "../../../components/Button/Button";
 import Hamburger from "../../../generic/Hamburger/Hamburger";
+import media from "styled-media-query";
 
 const scrollSettings = {
   activeClass: "active",
@@ -13,7 +14,7 @@ const scrollSettings = {
   duration: 500,
 };
 const StyledNav = styled.nav`
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   .hamburger {
     position: fixed;
@@ -54,22 +55,21 @@ const StyledNav = styled.nav`
     }
   }
 
-  ${({ theme }) =>
-    theme.mediaWidths.greaterThan("tablet")(css`
-      .hamburger {
-        display: none;
-      }
-      .menu {
-        position: inherit;
-        background-color: transparent;
-        transform: none;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-      }
-    `)}
+  ${media.greaterThan("860px")(css`
+    .hamburger {
+      display: none;
+    }
+    .menu {
+      position: inherit;
+      background-color: transparent;
+      transform: none;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+  `)}
 `;
 
 const Nav = () => {
