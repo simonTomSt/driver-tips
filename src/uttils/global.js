@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;
@@ -27,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
   .row{
     display:flex;
     align-items: center;
+    width: 100%;
   }
 `;
 

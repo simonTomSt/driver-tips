@@ -42,6 +42,11 @@ const StyledAbout = styled.section`
     display: block;
     width: 250px;
   }
+  .row{
+    align-items: center;
+    margin:0 auto;
+    justify-content: space-evenly !important;
+  }
     .feature {
   margin: 50px;
   `)}
@@ -49,7 +54,7 @@ const StyledAbout = styled.section`
 
 const About = () => {
   return (
-    <StyledAbout>
+    <StyledAbout id='about'>
       <Header center size='largest'>
         Co znajdziesz w DRIVER-TIPS?{" "}
       </Header>
