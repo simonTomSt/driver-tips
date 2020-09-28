@@ -49,12 +49,9 @@ const StyledOpening = styled.section`
       margin: 0 auto;
     }
   }
-  #background-video {
-    height: 100%;
-    width: 100%;
-    float: left;
-    top: 0;
-    padding: none;
+  .background-video {
+    min-width: 100%;
+    min-height: 100%;
   }
   ${media.greaterThan("1024px")(css`
     .message {
@@ -78,7 +75,7 @@ const Opening = () => {
   return (
     <StyledOpening>
       <NavBar />
-      <video autoPlay loop muted>
+      <video autoPlay loop muted className='background-video'>
         <source src={drivingVideo} type='video/mp4' />
       </video>
       <div className='message'>

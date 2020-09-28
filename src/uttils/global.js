@@ -30,6 +30,24 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     width: 100%;
   }
+  input, textarea{
+    border:0;
+    outline:none;
+    background-color: transparent;
+    border-bottom: 1.5px solid  ${({ theme }) => theme.colors.common};
+    padding:5px;
+    margin:5px 0 15px 0;
+    &:focus{
+      border-color: ${({ theme }) => theme.colors.black};
+      border-width: 2px;
+    }
+  }
+  textarea{
+    width:80%;
+    height:50px;
+    resize: none;
+    border: 1.5px solid  ${({ theme }) => theme.colors.common};
+  }
 `;
 
 export default GlobalStyle;

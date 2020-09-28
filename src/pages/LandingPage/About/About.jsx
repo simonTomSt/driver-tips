@@ -54,7 +54,7 @@ const StyledAbout = styled.section`
 
 const About = () => {
   return (
-    <StyledAbout id='about'>
+    <StyledAbout id='o-aplikacji'>
       <Header center size='largest'>
         Co znajdziesz w DRIVER-TIPS?{" "}
       </Header>

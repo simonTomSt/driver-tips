@@ -9,6 +9,20 @@ import opinionsUsers from "./opinionsUsers";
 const StyledOpinions = styled.section`
   background-color: ${({ theme }) => theme.colors.common};
   padding: 50px 10px;
+  position: relative;
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(98%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1300px 400px 0;
+    border-color: transparent ${({ theme }) => theme.colors.common} transparent
+      transparent;
+  }
   .opinion {
     width: 100%;
     text-align: center;
@@ -59,7 +73,7 @@ const StyledOpinions = styled.section`
     }
     .opinion {
       display: flex;
-      margin: 20px 60px;
+      margin: 20px 60px 20px 100px;
       h2 {
         margin: 15px 0 0 0;
       }
