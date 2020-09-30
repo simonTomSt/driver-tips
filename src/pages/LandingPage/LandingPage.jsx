@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../generic/Footer/Footer";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Opening from "./Opening/Opening";
@@ -11,6 +12,7 @@ const LandingPage = () => {
       <About />
       <Opinions />
       <Contact />
+      <Footer/>
     </>
   );
 };
